@@ -12,6 +12,10 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="394440430212407" type="inimigo" />
+                <action id="-10" name="Add to" sid="991930624338348" type="System">
+                    <param id="0" name="Variable">pontos</param>
+                    <param id="1" name="Value">10</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="381333443585910">
@@ -22,6 +26,22 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="571555047534745" type="moeda" />
+                <action id="-10" name="Add to" sid="952958712255350" type="System">
+                    <param id="0" name="Variable">pontos</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="370450463171231">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="381135737376885" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="598253020681357" type="placar">
+                    <param id="0" name="Text">&quot;Pontos: &quot;&amp;pontos</param>
+                </action>
             </actions>
         </event-block>
     </events>
