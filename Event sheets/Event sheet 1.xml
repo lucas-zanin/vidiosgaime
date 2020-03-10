@@ -3,7 +3,31 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="vida" sid="469620250114960" static="0" type="number">3</variable>
         <variable constant="0" name="pontos" sid="372823832821573" static="0" type="number">0</variable>
+        <event-block sid="972980925142499">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="485745839885639" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="146441219600534" type="life">
+                    <param id="0" name="Pin to">animationhero</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="782923277088273" type="animationhero">
+                    <param id="0" name="Object">heroi</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="590334215720290" type="animationhero">
+                    <param id="0" name="Pin to">heroi</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="602820819832345" type="System">
+                    <param id="0" name="Variable">vida</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="115193625733352">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="521264819998986" type="heroi">
@@ -11,10 +35,9 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="394440430212407" type="inimigo" />
-                <action id="-10" name="Add to" sid="991930624338348" type="System">
-                    <param id="0" name="Variable">pontos</param>
-                    <param id="1" name="Value">10</param>
+                <action id="-11" name="Subtract from" sid="770897403202503" type="System">
+                    <param id="0" name="Variable">vida</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>
@@ -28,7 +51,7 @@
                 <action id="-9" name="Destroy" sid="571555047534745" type="moeda" />
                 <action id="-10" name="Add to" sid="952958712255350" type="System">
                     <param id="0" name="Variable">pontos</param>
-                    <param id="1" name="Value">1</param>
+                    <param id="1" name="Value">10</param>
                 </action>
             </actions>
         </event-block>
@@ -41,6 +64,92 @@
             <actions>
                 <action id="0" name="Set text" sid="598253020681357" type="placar">
                     <param id="0" name="Text">&quot;Pontos: &quot;&amp;pontos</param>
+                </action>
+                <action id="5" name="Set frame" sid="221822353372014" type="life">
+                    <param id="0" name="Frame number">vida</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="659392370253360">
+            <conditions>
+                <condition behavior="Platform" id="0" name="Is moving" sid="322387756939357" type="heroi" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="845040633901497" type="animationhero">
+                    <param id="0" name="Animation">&quot;andando&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="578119133514900">
+            <conditions>
+                <condition id="-22" name="Else" sid="327160443613239" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="378254302353609" type="animationhero">
+                    <param id="0" name="Animation">&quot;parado&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="553049395055113">
+            <conditions>
+                <condition behavior="Platform" id="3" name="Is jumping" sid="955172709976608" type="heroi" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="164583522257199" type="animationhero">
+                    <param id="0" name="Animation">&quot;pulando&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="826694946824862">
+            <conditions>
+                <condition behavior="Platform" id="4" name="Is falling" sid="511652501704629" type="heroi" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="701890363590004" type="animationhero">
+                    <param id="0" name="Animation">&quot;caindo&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="246330814046565">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="469441623184545" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="873794987702176" type="animationinimigo">
+                    <param id="0" name="Object">inimigo</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="164124706268281" type="animationinimigo">
+                    <param id="0" name="Pin to">inimigo</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="533023653572174">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="662851799095561" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="321171902925358" type="animationhero">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="543343596315083">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="978423484527275" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="511426775093269" type="animationhero">
+                    <param id="0" name="State">0</param>
                 </action>
             </actions>
         </event-block>
