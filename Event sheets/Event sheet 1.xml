@@ -131,25 +131,40 @@
         </event-block>
         <event-block sid="533023653572174">
             <conditions>
-                <condition id="0" name="On key pressed" sid="662851799095561" type="Keyboard">
+                <condition id="2" name="Key is down" sid="852166176681035" type="Keyboard">
                     <param id="0" name="Key">39</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="7" name="Set mirrored" sid="321171902925358" type="animationhero">
+                <action id="7" name="Set mirrored" sid="173304465929254" type="animationhero">
                     <param id="0" name="State">1</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="543343596315083">
+        <event-block sid="314496059981454">
             <conditions>
-                <condition id="0" name="On key pressed" sid="978423484527275" type="Keyboard">
+                <condition id="2" name="Key is down" sid="934874931049995" type="Keyboard">
                     <param id="0" name="Key">37</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="7" name="Set mirrored" sid="511426775093269" type="animationhero">
+                <action id="7" name="Set mirrored" sid="860760502840359" type="animationhero">
                     <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="635748905252040">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="936927242116376" type="heroi" />
+                <condition id="9" name="Is overlapping at offset" sid="274654770110649" type="heroi">
+                    <param id="0" name="Object">ponte2</param>
+                    <param id="1" name="Offset X">0</param>
+                    <param id="2" name="Offset Y">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="6" name="Set max fall speed" sid="436983501714041" type="ponte2">
+                    <param id="0" name="Max fall speed">500</param>
                 </action>
             </actions>
         </event-block>

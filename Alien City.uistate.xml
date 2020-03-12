@@ -29,7 +29,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/heroi/" />
-        <folder expanded="1" path="animation-folder/base/" />
         <folder expanded="1" path="animation-folder/animationhero/" />
         <folder expanded="1" path="animation-folder/inimigo/" />
         <folder expanded="1" path="animation-folder/moeda/" />
@@ -38,5 +37,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Sprite/" />
         <folder expanded="1" path="animation-folder/Sprite3/" />
         <folder expanded="1" path="animation-folder/life/" />
+        <folder expanded="1" path="animation-folder/Sprite4/" />
+        <folder expanded="1" path="animation-folder/Sprite5/" />
+        <folder expanded="1" path="animation-folder/Sprite6/" />
+        <folder expanded="1" path="animation-folder/Sprite7/" />
+        <folder expanded="1" path="animation-folder/espinho/" />
     </folders-expanded>
 </c2uistate>
